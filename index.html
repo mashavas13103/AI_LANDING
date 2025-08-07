@@ -3,262 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ИИ, который работает в поле — &lt;ваше имя&gt;</title>
+  <title>ИИ, который работает в поле — Мария</title>
   <meta name="description" content="AI-generalist с 10+ годами опыта: внедрение ИИ в HSE, CV, GenAI, RPA. Снижаем риски, повышаем эффективность.">
-  
-  <!-- ШРИФТЫ (чтобы заработали Roboto и Inter из CSS) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- AOS CSS -->
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #eef3ff;
-      --ink: #333;
-      --brand: #2E8BFD;
-      --line: rgba(46, 139, 253, 0.25);
-      --card-bg: rgba(255,255,255,0.7);
-      --ring1: #c7d2fe; /* голубой-серебристый */
-      --ring2: #e5e7eb; /* светло-серый */
-      --ring3: #bfdbfe; /* небесно-голубой */
-    }
+  <!-- OG -->
+  <meta property="og:title" content="ИИ, который работает в поле — Мария">
+  <meta property="og:description" content="Внедряю AI, который приносит реальную пользу: LLM, CV, HSE, RPA.">
+  <meta property="og:type" content="website">
 
-    /* Базовая типографика */
+  <style>
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom, #f9f9f9, var(--bg));
-      color: var(--ink);
+      background: linear-gradient(to bottom, #f9f9f9, #eef3ff);
+      color: #333;
       scroll-behavior: smooth;
     }
-    h1, h2, h3 {
-      font-family: 'Inter', sans-serif;
-      margin-bottom: 0.5em;
-    }
-
-    /* ШАПКА — сложный сине-бело-серый паттерн + оверлей для читаемости */
+    h1, h2, h3 { font-family: 'Inter', sans-serif; margin-bottom: 0.5em; }
     header {
-      color: #fff;
-      text-align: center;
-      padding: 120px 20px 100px;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #294e91, #1b6edc); /* сохраняем «оригинальность» градиента */
-      isolation: isolate; /* чтобы стеклянные блоки корректно накладывались */
+      background: linear-gradient(135deg, #2E8BFD, #1b6edc);
+      color: #fff; text-align: center; padding: 100px 20px;
+      position: relative; overflow: hidden;
     }
-    /* Сложный паттерн: многослойные градиенты */
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background:
-        /* тёмный оверлей для контраста текста */
-        linear-gradient(180deg, rgba(10,18,36,0.55), rgba(10,18,36,0.2)),
-        /* тонкая диагональная сетка */
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.06) 0 2px, rgba(255,255,255,0) 2px 10px),
-        /* мягкие пятна синего/серого */
-        radial-gradient(800px 400px at 85% -10%, rgba(30,64,175,0.35), transparent 60%),
-        radial-gradient(700px 380px at -10% 20%, rgba(2,132,199,0.25), transparent 60%),
-        /* базовая светлая конусная текстура */
-        conic-gradient(from 210deg at 50% 50%, #f3f5fb, #e6ecf7, #d9e2f2, #f3f5fb);
-      background-blend-mode: overlay, soft-light, normal, normal, normal;
-    }
-    /* Лёгкий «плавающий» шар из вашего кода — сохраняем оригинальный штрих */
     header::after {
-      content: "";
-      position: absolute;
-      top: -50px;
-      left: -50px;
-      width: 200px;
-      height: 200px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      animation: float 6s infinite ease-in-out;
-      z-index: -1;
+      content: ""; position: absolute; top: -50px; left: -50px;
+      width: 200px; height: 200px; background: rgba(255,255,255,0.1);
+      border-radius: 50%; animation: float 6s infinite ease-in-out;
     }
     @keyframes float {
       0% { transform: translateY(0); }
       50% { transform: translateY(20px); }
       100% { transform: translateY(0); }
     }
-
     .cta-btn {
-      background: #fff;
-      color: var(--brand);
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      transition: 0.3s;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      background: #fff; color: #2E8BFD; padding: 12px 24px; border-radius: 6px;
+      font-weight: bold; display: inline-block; margin-top: 20px; text-decoration: none; transition: 0.3s;
     }
-    .cta-btn:hover {
-      background: #e0eaff;
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    /* Иконки: «дорогие» обводки с градиентным кольцом и стеклянностью */
-    .icons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-    .icon-card {
-      position: relative;
-      text-align: center;
-      font-size: 1.05em;
-      padding: 16px 18px;
-      border-radius: 12px;
-      background: var(--card-bg);
-      backdrop-filter: saturate(120%) blur(4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .icon-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.1); }
-    .icon-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px; /* толщина «кольца» */
-      background: linear-gradient(135deg, var(--ring1), var(--ring2), var(--ring3));
-      -webkit-mask: 
-        linear-gradient(#000 0 0) content-box, 
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    /* Карточки «Как я помогаю» */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .card {
-      position: relative;
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 20px;
-      backdrop-filter: saturate(120%) blur(4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(135deg, var(--ring1), var(--ring2), var(--ring3));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    /* Кейсы */
-    .case {
-      position: relative;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      margin-bottom: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .case:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.1); }
-    .case::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(135deg, var(--ring1), var(--ring2), var(--ring3));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    .testimonial {
-      font-style: italic;
-      margin-bottom: 20px;
-      position: relative;
-      padding: 12px 16px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(3px);
-    }
-    .testimonial::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(135deg, var(--ring1), var(--ring2), var(--ring3));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    /* Фото-блок: выделяем место под портрет с «кольцом» */
-    .photo-block {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 40px;
-    }
-    .photo-block img {
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
+    .cta-btn:hover { background: #e0eaff; }
+    .section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+    .icons { display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
+    .icon-card { text-align: center; font-size: 1.1em; transition: transform 0.3s; }
+    .icon-card:hover { transform: scale(1.05); }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
+    .case { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    .testimonial { font-style: italic; margin-bottom: 20px; }
+    .photo-block { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 40px; }
+    .photo-block img { max-width: 300px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s; }
     .photo-block img:hover { transform: scale(1.03); }
-
-    /* Акцент для портретного фото */
-    .profile-photo {
-      width: 300px;
-      height: 360px;
-      object-fit: cover;
-      position: relative;
-      z-index: 0;
-      background: #f6f8ff;
-      border-radius: 16px;
-    }
-    .profile-wrap {
-      position: relative;
-      border-radius: 18px;
-      padding: 2px; /* видимая «дорогая» окантовка */
-      background: linear-gradient(135deg, var(--ring1), var(--ring2), var(--ring3));
-    }
-
-    footer {
-      background: #2E8BFD;
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-    }
+    footer { background: #2E8BFD; color: #fff; text-align: center; padding: 40px 20px; }
     footer a { color: #fff; text-decoration: underline; }
 
-    /* Меньше движения при настройке пользователя */
+    /* Доступность: меньше движения */
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; scroll-behavior: auto; }
     }
@@ -269,25 +74,20 @@
 <header data-aos="fade-down">
   <h1>ИИ, который работает в поле</h1>
   <p>Внедряю искусственный интеллект там, где он приносит реальную пользу</p>
-  <a href="#contacts" class="cta-btn">Связаться со мной</a>
+  <a href="#contacts" class="cta-btn" aria-label="Связаться со мной">Связаться со мной</a>
 </header>
 
 <section class="section" data-aos="fade-up">
   <h2>Обо мне</h2>
-  <p>Я — &lt;ваше имя&gt;, AI-generalist с 10+ годами опыта в проектах по искусственному интеллекту: от R&amp;D до внедрения и консалтинга.</p>
+  <p>Я — Мария, AI-generalist с 10+ годами опыта в проектах по искусственному интеллекту: от R&amp;D до внедрения и консалтинга.</p>
   <p>Мои ключевые компетенции — LLM-решения, CV-модели, MLOps и цифровая трансформация HSE. Я создаю ИИ, который работает на результат.</p>
-
   <div class="icons" data-aos="zoom-in">
     <div class="icon-card">🧠<br>10+ лет опыта</div>
     <div class="icon-card">🚀<br>50+ проектов</div>
-    <div class="icon-card">📉<br>20 % ↓ рисков</div>
+    <div class="icon-card">📉<br>20% ↓ рисков</div>
   </div>
-
-  <!-- Место под ваше фото (с «дорогой» рамкой) + доп. иллюстрация -->
   <div class="photo-block" data-aos="fade-up">
-    <div class="profile-wrap">
-      <img class="profile-photo" src="images/your-photo.jpg" alt="Ваше фото" loading="lazy" width="300" height="360">
-    </div>
+    <img src="images/your-photo.jpg" alt="Фото Марии" loading="lazy" width="300" height="400">
     <img src="images/ai-illustration.jpg" alt="AI-иллюстрация" loading="lazy" width="300" height="300">
   </div>
 </section>
@@ -305,28 +105,31 @@
 
 <section class="section" data-aos="fade-up">
   <h2>Кейсы</h2>
-  <div class="case" data-aos="fade-right"><strong>Проблема:</strong> Высокий травматизм<br><strong>Решение:</strong> AI-платформа мониторинга HSE<br><strong>Результат:</strong> -20 % инцидентов</div>
-  <div class="case" data-aos="fade-left"><strong>Проблема:</strong> Брак продукции<br><strong>Решение:</strong> CV-система контроля качества<br><strong>Результат:</strong> -35 % браковки</div>
-  <div class="case" data-aos="fade-up"><strong>Проблема:</strong> Перегруз call-центра<br><strong>Решение:</strong> Чат-бот на GPT-подобной модели<br><strong>Результат:</strong> -50 % обращений</div>
+  <div class="case" data-aos="fade-right"><strong>Проблема:</strong> Высокий травматизм<br><strong>Решение:</strong> AI-платформа мониторинга HSE<br><strong>Результат:</strong> −20% инцидентов</div>
+  <div class="case" data-aos="fade-left"><strong>Проблема:</strong> Брак продукции<br><strong>Решение:</strong> CV-система контроля качества<br><strong>Результат:</strong> −35% браковки</div>
+  <div class="case" data-aos="fade-up"><strong>Проблема:</strong> Перегруз call-центра<br><strong>Решение:</strong> Чат-бот на GPT-подобной модели<br><strong>Результат:</strong> −50% обращений</div>
 </section>
 
 <section class="section" data-aos="fade-up">
   <h2>Отзывы</h2>
-  <p class="testimonial" data-aos="fade-right">«&lt;ваше имя&gt; помог нам внедрить ИИ без лишней теории — только практические решения»</p>
+  <p class="testimonial" data-aos="fade-right">«Мария помогла нам внедрить ИИ без лишней теории — только практические решения»</p>
   <p class="testimonial" data-aos="fade-left">«Очень понятный подход, видно глубокую экспертизу и ориентацию на результат»</p>
 </section>
 
 <section class="section" id="contacts" data-aos="fade-up">
   <h2>Контакты</h2>
-  <p>📧 Email <!-- добавьте ваш e-mail, например: <a href="mailto:you@example.com">you@example.com</a> --></p>
+  <p>📧 Email: <a href="mailto:you@example.com">you@example.com</a></p>
+  <p>💬 Telegram: <a href="https://t.me/yourhandle" target="_blank" rel="noopener">t.me/yourhandle</a></p>
+  <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></p>
 </section>
 
 <footer>
-  <p>© 2025 &lt;ваше имя&gt;. Все права защищены.</p>
+  <p>© 2025 Мария. Все права защищены.</p>
 </footer>
 
-<!-- AOS JS + init (чтобы data-aos работали) -->
+<!-- AOS JS + init -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script> AOS.init({ once: true, duration: 600, offset: 80 }); </script>
+<script>AOS.init({ once: true, duration: 600, offset: 80 });</script>
 </body>
 </html>
+
